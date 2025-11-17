@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMKM Finder - Temukan UMKM Terdekat</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <h1>Temukan UMKM Terdekat</h1>
+                <p>di Sekitar Anda</p>
+                
+                <div class="search-section">
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Q Cari UMKM / Lokasi / Produk">
+                    </div>
+                    <button class="view-map-btn" onclick="toggleMapView()">Lihat Peta</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Kategori Section -->
+                <section class="categories-section">
+                    <h2>Kategori UMKM</h2>
+                    <div class="categories-grid">
+                        <div class="category-item" onclick="filterByCategory('makanan')">
+                            <span>🍔</span>
+                            <span>Makanan & Minuman</span>
+                        </div>
+                        <div class="category-item" onclick="filterByCategory('fashion')">
+                            <span>👕</span>
+                            <span>Fashion</span>
+                        </div>
+                        <div class="category-item" onclick="filterByCategory('kerajinan')">
+                            <span>🎨</span>
+                            <span>Kerajinan</span>
+                        </div>
+                        <div class="category-item" onclick="filterByCategory('jasa')">
+                            <span>🔧</span>
+                            <span>Jasa</span>
+                        </div>
+                        <div class="category-item" onclick="filterByCategory('pertanian')">
+                            <span>🌱</span>
+                            <span>Pertanian</span>
+                        </div>
+                        <div class="category-item" onclick="filterByCategory('teknologi')">
+                            <span>💻</span>
+                            <span>Teknologi</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- UMKM Populer Section -->
+                <section class="popular-umkm">
+                    <h2>UMKM Populer</h2>
+                    <div class="umkm-list">
+                        <div class="umkm-card" onclick="showUMKMDetail('warung-bu-sari')">
+                            <div class="umkm-header">
+                                <h3>Warung Makan Bu Sari</h3>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                            <p class="location">Bandung</p>
+                            <button class="detail-btn">Detail</button>
+                        </div>
+                        
+                        <div class="umkm-card" onclick="showUMKMDetail('toko-baju-ayu')">
+                            <div class="umkm-header">
+                                <h3>Toko Baju Ayu</h3>
+                                <div class="rating">★★★★☆</div>
+                            </div>
+                            <p class="location">Jakarta</p>
+                            <button class="detail-btn">Detail</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Map Area -->
+            <div class="map-area">
+                <div id="umkmMap"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
